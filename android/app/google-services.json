@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1048112547385",
+    "project_id": "hackify-8e96a",
+    "storage_bucket": "hackify-8e96a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048112547385:android:101ac69b6ef59f1a15efe8",
+        "android_client_info": {
+          "package_name": "com.example.hackify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048112547385-jolpv1nolhsvfvhpnedpn016qv6e37bk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5AMSATAUu2raXLJwOkWtrI8yCsogKyCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048112547385-jolpv1nolhsvfvhpnedpn016qv6e37bk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

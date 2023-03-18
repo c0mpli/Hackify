@@ -1,6 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:hackify/pages/home.dart';
+import 'package:hackify/pages/login.dart';
+import 'package:hackify/pages/signup.dart';
+import 'firebase_options.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  runApp(const MyApp());
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await GetStorage.init();
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,10 +23,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
-    );
+    final getStorageInstance = GetStorage();
+
+    {
+      return MaterialApp(
+        title: _title,
+        home: (getStorageInstance.read("user") != null)
+            ? MyStatefulWidget()
+            : SignupPage(),
+      );
+    }
   }
 }
 
@@ -28,10 +48,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    HomePage(),
     Text(
       'Index 1: Business',
       style: optionStyle,
