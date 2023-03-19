@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ExplorePage extends StatefulWidget {
+  const ExplorePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ExplorePage> createState() => _ExplorePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ExplorePageState extends State<ExplorePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text("Home page"),
+      body: Text("Explore page"),
     );
   }
 }

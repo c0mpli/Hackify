@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hackify/pages/explore.dart';
 import 'package:hackify/pages/home.dart';
 import 'package:hackify/pages/login.dart';
+import 'package:hackify/pages/profile.dart';
 import 'package:hackify/pages/signup.dart';
+import 'package:hackify/pages/yourHackathons.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -19,12 +22,11 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const String _title = 'Flutter Code Sample';
+  static const String _title = 'Your goto Hackathon app';
 
   @override
   Widget build(BuildContext context) {
     final getStorageInstance = GetStorage();
-
     {
       return MaterialApp(
         title: _title,
@@ -49,18 +51,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: School',
-      style: optionStyle,
-    ),
+    ExplorePage(),
+    YourHackathonPage(),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
