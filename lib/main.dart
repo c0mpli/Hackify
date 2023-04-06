@@ -8,6 +8,13 @@ import 'package:hackify/pages/profile.dart';
 import 'package:hackify/pages/signup.dart';
 import 'package:hackify/pages/yourHackathons.dart';
 import 'firebase_options.dart';
+import 'package:hackify/pages/login2.dart';
+import 'package:hackify/pages/signup2.dart';
+import 'package:hackify/screens//Welcome/welcome_screen.dart';
+import 'package:hackify/constants.dart';
+import 'package:hackify/pages/yourHackathons.dart';
+import 'package:hackify/card.dart';
+import 'package:hackify/pages/createHackathon.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -32,7 +39,7 @@ class MyApp extends StatelessWidget {
         title: _title,
         home: (getStorageInstance.read("user") != null)
             ? MyStatefulWidget()
-            : SignupPage(),
+            : HackathonFormPage(),
       );
     }
   }

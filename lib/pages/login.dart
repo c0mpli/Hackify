@@ -68,7 +68,9 @@ class _LoginPageState extends State<LoginPage> {
       child: Scaffold(
         body: Column(
           children: [
-            Text("LOGIN"),
+            Row(children: [
+              Text('Login Now'),
+            ],),
             TextFormField(
               onChanged: (value) => {email = value},
               decoration: InputDecoration(hintText: "Email"),
